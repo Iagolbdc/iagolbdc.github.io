@@ -1,0 +1,578 @@
+:root {
+  --am-yellow-1: #F2E205;
+  --am-yellow-2: #F2CB05;
+  --am-orange-1: #F29F05;
+  --am-orange-2: #F28705;
+  --am-black: #0D0D0D;
+  --am-light: #fdf9f2;
+  --am-gray: #6c757d;
+  --am-success: #25d366;
+  --am-dark: #1a252f;
+}
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--am-black);
+  background-color: var(--am-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.section-title, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(13, 13, 13, 0.9);
+  transition: all 0.3s ease;
+  padding: 15px 0;
+}
+
+.navbar.scrolled {
+  background-color: var(--am-black);
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--am-yellow-1);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: url('src/img/hero-background.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 2rem 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero {
+  transition: all 0.5s ease;
+}
+
+.hero:hover .hero-overlay {
+  opacity: 0.9;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(242, 135, 5, 0.85), rgba(242, 203, 5, 0.85));
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+}
+
+.btn-primary {
+  background-color: var(--am-black);
+  border-color: var(--am-black);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  border-color: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Seções */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: var(--am-yellow-1);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-subtitle {
+  color: var(--am-gray);
+  font-size: 1.1rem;
+}
+
+/* Sobre */
+.about-img {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-img img {
+  transition: transform 0.5s ease;
+}
+
+.about-img:hover img {
+  transform: scale(1.05);
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Diferenciais */
+.feature-card {
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background-color: var(--am-yellow-1) !important;
+  color: var(--am-black) !important;
+}
+
+/* Produtos */
+.product-card {
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-img {
+  height: 250px;
+  overflow: hidden;
+}
+
+.product-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.1);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+/* Galeria */
+.gallery-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
+
+.gallery-item img {
+  transition: all 0.5s ease;
+}
+
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 13, 13, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+/* CTA Final */
+.cta-final {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-final .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mapa */
+.map {
+  position: relative;
+}
+
+.map iframe {
+  filter: grayscale(20%) contrast(90%);
+}
+
+/* Footer */
+footer {
+  background-color: var(--am-black);
+}
+
+footer a:hover {
+  color: var(--am-yellow-1) !important;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--am-yellow-1);
+  color: var(--am-black) !important;
+  transform: translateY(-3px);
+}
+
+/* Botão WhatsApp */
+.whatsapp-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--am-success);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 999;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-fixed:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+  text-decoration: none;
+  color: white;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--am-dark);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 30px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.whatsapp-fixed:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+/* Animação do botão */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+/* Animação na entrada */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botões */
+.btn {
+  font-weight: 500;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+}
+
+.btn-warning {
+  background-color: var(--am-yellow-1);
+  border-color: var(--am-yellow-1);
+  color: var(--am-black);
+}
+
+.btn-warning:hover {
+  background-color: var(--am-yellow-2);
+  border-color: var(--am-yellow-2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(242, 226, 5, 0.3);
+  color: var(--am-black);
+}
+
+.btn-outline-warning {
+  color: var(--am-yellow-1);
+  border-color: var(--am-yellow-1);
+}
+
+.btn-outline-warning:hover {
+  background-color: var(--am-yellow-1);
+  border-color: var(--am-yellow-1);
+  color: var(--am-black);
+}
+
+.btn-dark {
+  background-color: var(--am-black);
+  border-color: var(--am-black);
+}
+
+.btn-dark:hover {
+  background-color: #333;
+  border-color: #333;
+}
+
+.btn-outline-dark {
+  color: var(--am-black);
+  border-color: var(--am-black);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--am-black);
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 1.5rem 60px;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .experience-badge {
+    width: 80px;
+    height: 80px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-position: 60% center;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Estilos personalizados para o Fancybox */
+.fancybox__container {
+  --fancybox-bg: rgba(13, 13, 13, 0.9);
+}
+
+.fancybox__toolbar {
+  background: rgba(13, 13, 13, 0.6);
+}
+
+.fancybox__thumbs {
+  --fancybox-thumbs-width: 100px;
+  --fancybox-thumbs-ratio: 1;
+  background: rgba(13, 13, 13, 0.3);
+}
+
+.fancybox__button {
+  color: #F2E205;
+}
+
+.fancybox__caption {
+  text-align: center;
+  background: rgba(13, 13, 13, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Loader personalizado */
+.fancybox__slide.is-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #F2E205;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: fancybox-rotate 1s linear infinite;
+}
+
+@keyframes fancybox-rotate {
+  to { transform: rotate(360deg); }
+}
